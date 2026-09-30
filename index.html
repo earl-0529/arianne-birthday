@@ -434,7 +434,7 @@
             <article class="love-card">
     <div class="love-card-number">01</div>
     <div class="love-card-icon">♥</div>
-    <h3>Your Dedication</h3>
+    <h3>Your Hardworking Side</h3>
     <p>
         I really admire how hardworking you are
         and how you keep doing your best.
@@ -976,6 +976,274 @@
 
         </div>
 
+        <!-- PHOTObOOTH -->
+<div class="photobooth-area">
+
+    <button
+        class="photobooth-button"
+        id="photoboothButton"
+        type="button"
+        aria-label="Open birthday photobooth">
+
+        <span class="photobooth-camera">📸</span>
+
+        <span class="photobooth-button-text">
+            Take a Photo
+        </span>
+
+        <span class="photobooth-button-heart">
+            ♡
+        </span>
+
+    </button>
+
+    <p class="photobooth-hint">
+        Make a little memory together ♡
+    </p>
+
+</div>
+
+
+<!-- PHOTOBOOTH MODAL -->
+<div
+    class="photobooth-modal"
+    id="photoboothModal"
+    aria-hidden="true">
+
+    <div
+        class="photobooth-backdrop"
+        id="photoboothBackdrop">
+    </div>
+
+    <div class="photobooth-window">
+
+        <button
+            class="photobooth-close"
+            id="photoboothClose"
+            type="button"
+            aria-label="Close photobooth">
+            ×
+        </button>
+
+
+        <!-- CAMERA STEP -->
+
+        <div
+            class="photobooth-camera-screen"
+            id="photoboothCameraScreen">
+
+            <div class="photobooth-title">
+                <span>♡</span>
+                Birthday Photobooth
+                <span>♡</span>
+            </div>
+
+            <div class="camera-preview">
+
+    <video
+        id="cameraVideo"
+        autoplay
+        playsinline>
+    </video>
+
+    <div class="camera-sticker-layer" id="cameraStickerLayer">
+
+    <div class="face-sticker" id="faceSticker">🎂</div>
+
+    <div class="face-sticker heart-left" id="heartLeft"></div>
+
+    <div class="face-sticker heart-right" id="heartRight"></div>
+
+</div>
+
+    <div
+        class="camera-countdown"
+        id="cameraCountdown">
+    </div>
+
+</div>
+
+
+            <div class="filter-title">
+    Choose a cute sticker
+</div>
+
+<div class="filter-buttons">
+
+    <button
+        class="filter-button active"
+        data-sticker="birthday"
+        type="button">
+        🎂
+        <span>Hat</span>
+    </button>
+
+    <button
+        class="filter-button"
+        data-sticker="crown"
+        type="button">
+        👑
+        <span>Crown</span>
+    </button>
+
+    <button
+        class="filter-button"
+        data-sticker="bunny"
+        type="button">
+        🐰
+        <span>Bunny</span>
+    </button>
+
+    <button
+        class="filter-button"
+        data-sticker="glasses"
+        type="button">
+        😎
+        <span>Glasses</span>
+    </button>
+
+    <button
+        class="filter-button"
+        data-sticker="hearts"
+        type="button">
+        💕
+        <span>Hearts</span>
+    </button>
+
+</div>
+
+
+            <p
+                class="photo-progress"
+                id="photoProgress">
+                Photo 1 of 4
+            </p>
+
+
+            <button
+                class="take-photo-button"
+                id="takePhotoButton"
+                type="button">
+
+                <span class="take-photo-ring">
+                    <span></span>
+                </span>
+
+                Take Photo
+
+            </button>
+
+        </div>
+
+
+        <!-- RESULT STEP -->
+
+        <div
+            class="photobooth-result-screen"
+            id="photoboothResultScreen">
+
+            <div class="photobooth-title">
+                <span>♡</span>
+                Your Little Memory
+                <span>♡</span>
+            </div>
+
+            <div class="photo-strip-preview">
+
+                <canvas
+                    id="photoStripCanvas">
+                </canvas>
+
+            </div>
+
+            <p class="result-text">
+                four little moments to keep ♡
+            </p>
+
+            <div class="photo-enhance-section">
+
+    <p class="enhance-title">
+        Make it a little prettier ♡
+    </p>
+
+    <div class="enhance-buttons">
+
+        <button
+            class="enhance-button active"
+            data-enhance="original"
+            type="button">
+            <span>♡</span>
+            <small>Original</small>
+        </button>
+
+        <button
+            class="enhance-button"
+            data-enhance="soft"
+            type="button">
+            <span>☁</span>
+            <small>Soft</small>
+        </button>
+
+        <button
+            class="enhance-button"
+            data-enhance="bright"
+            type="button">
+            <span>✦</span>
+            <small>Bright</small>
+        </button>
+
+        <button
+            class="enhance-button"
+            data-enhance="sweet"
+            type="button">
+            <span>♡</span>
+            <small>Sweet</small>
+        </button>
+
+        <button
+            class="enhance-button"
+            data-enhance="dreamy"
+            type="button">
+            <span>✧</span>
+            <small>Dreamy</small>
+        </button>
+
+        <button
+            class="enhance-button"
+            data-enhance="vintage"
+            type="button">
+            <span>✿</span>
+            <small>Vintage</small>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="result-buttons">
+
+    <button
+        class="retake-button"
+        id="retakeButton"
+        type="button">
+        ↻ Retake
+    </button>
+
+    <button
+        class="download-photo-button"
+        id="downloadPhotoButton"
+        type="button">
+        ↓ Download Photo
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
     </div>
 <div
     class="video-modal"
@@ -1112,7 +1380,7 @@
          JAVASCRIPT
     ========================================= -->
 
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
 
 </body>
 
