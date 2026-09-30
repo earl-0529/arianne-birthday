@@ -5806,3 +5806,576 @@ button:focus-visible {
 .memory-four-image img {
     object-position: center 10%;
 }
+/* =========================================
+   FOUR-PHOTO BIRTHDAY PHOTOBOOTH
+========================================= */
+
+.photobooth-area {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.photobooth-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1px solid rgba(217, 87, 132, 0.20);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #7a364e;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(180, 76, 111, 0.12);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.photobooth-button:hover {
+    transform: translateY(-3px);
+    background: #ffffff;
+    box-shadow: 0 18px 38px rgba(180, 76, 111, 0.18);
+}
+
+.photobooth-camera {
+    font-size: 19px;
+}
+
+.photobooth-button-heart {
+    color: #d95784;
+    font-size: 17px;
+}
+
+.photobooth-hint {
+    margin-top: 9px;
+    color: rgba(122, 54, 78, 0.62);
+    font-size: 11px;
+}
+
+
+/* =========================================
+   PHOTOBOOTH MODAL
+========================================= */
+
+.photobooth-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photobooth-modal.show {
+    display: flex;
+}
+
+.photobooth-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(65, 25, 42, 0.62);
+    backdrop-filter: blur(10px);
+}
+
+.photobooth-window {
+    position: relative;
+    z-index: 2;
+    width: min(94vw, 520px);
+    max-height: 94vh;
+    overflow-y: auto;
+    padding: 24px;
+    border-radius: 28px;
+    background:
+        linear-gradient(
+            145deg,
+            #fffafb,
+            #ffeef4
+        );
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 30px 80px rgba(60, 20, 40, 0.28);
+}
+
+.photobooth-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    color: #7a364e;
+    font-size: 23px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.photobooth-title {
+    margin-bottom: 18px;
+    color: #7a364e;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.photobooth-title span {
+    color: #d95784;
+    margin: 0 5px;
+}
+
+
+/* =========================================
+   CAMERA
+========================================= */
+
+.camera-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #24171d;
+    box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,0.55),
+        0 15px 35px rgba(122, 54, 78, 0.16);
+}
+
+.camera-preview video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+
+/* =========================================
+   EMOJI STICKER
+========================================= */
+
+.camera-sticker-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.face-sticker {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 100px;
+    line-height: 0;
+    pointer-events: none;
+    user-select: none;
+    filter: drop-shadow(
+        0 4px 7px rgba(60, 20, 40, 0.16)
+    );
+    transition:
+        left 0.08s linear,
+        top 0.08s linear,
+        width 0.08s linear,
+        height 0.08s linear;
+}
+
+.face-sticker svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.camera-countdown {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 80px;
+    font-weight: 800;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 4;
+}
+
+
+/* =========================================
+   STICKER BUTTONS
+========================================= */
+
+.filter-title {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    color: #7a364e;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    min-width: 62px;
+    padding: 8px 9px;
+    border: 1px solid rgba(217, 87, 132, 0.12);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.68);
+    color: #7a364e;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.filter-button span {
+    display: block;
+    margin-top: 3px;
+    font-size: 9px;
+}
+
+.filter-button:hover {
+    transform: translateY(-2px);
+}
+
+.filter-button.active {
+    background: #fff;
+    border-color: rgba(217,87,132,0.45);
+    box-shadow:
+        0 7px 18px rgba(180,76,111,0.12);
+}
+
+
+/* =========================================
+   PHOTO PROGRESS
+========================================= */
+
+.photo-progress {
+    margin: 16px 0 10px;
+    color: rgba(122,54,78,0.65);
+    text-align: center;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   TAKE PHOTO
+========================================= */
+
+.take-photo-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 15px;
+    background: #d95784;
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow:
+        0 12px 25px rgba(217,87,132,0.25);
+    transition:
+        transform 0.25s ease;
+}
+
+.take-photo-button:hover {
+    transform: translateY(-2px);
+}
+
+.take-photo-ring {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.take-photo-ring span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.photobooth-result-screen {
+    display: none;
+}
+
+.photobooth-result-screen.show {
+    display: block;
+}
+
+.photobooth-camera-screen.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   FOUR-PHOTO GRID
+========================================= */
+
+.photo-strip-preview {
+    width: min(82vw, 360px);
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 7px;
+    background: white;
+    box-shadow:
+        0 18px 40px rgba(100,35,60,0.20);
+}
+
+.photo-strip-preview canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   RESULT TEXT
+========================================= */
+
+.result-text {
+    margin: 16px 0;
+    color: #7a364e;
+    text-align: center;
+    font-size: 12px;
+}
+
+.result-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.retake-button,
+.download-photo-button {
+    flex: 1;
+    min-height: 46px;
+    border-radius: 13px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.retake-button {
+    border: 1px solid rgba(217,87,132,0.25);
+    background: white;
+    color: #7a364e;
+}
+
+.download-photo-button {
+    border: none;
+    background: #d95784;
+    color: white;
+    box-shadow:
+        0 10px 22px rgba(217,87,132,0.20);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .photobooth-modal {
+        padding: 10px;
+    }
+
+    .photobooth-window {
+        width: 96vw;
+        max-height: 96vh;
+        padding: 18px;
+        border-radius: 23px;
+    }
+
+    .photobooth-title {
+        font-size: 17px;
+        margin-bottom: 13px;
+    }
+
+    .filter-buttons {
+        gap: 5px;
+    }
+
+    .filter-button {
+        min-width: 55px;
+        padding: 7px 6px;
+    }
+
+    .filter-button span {
+        font-size: 8px;
+    }
+
+    .camera-countdown {
+        font-size: 65px;
+    }
+
+    .face-sticker {
+        font-size: 58px;
+    }
+
+    .photo-strip-preview {
+        width: min(82vw, 300px);
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .photobooth-window {
+        padding: 15px;
+    }
+
+    .filter-button {
+        min-width: 51px;
+    }
+
+    .photobooth-title {
+        font-size: 15px;
+    }
+
+    .face-sticker {
+        font-size: 52px;
+    }
+
+    .photo-strip-preview {
+        width: min(84vw, 280px);
+    }
+}
+/* =========================================
+   PHOTO ENHANCEMENT FILTERS
+========================================= */
+
+.photo-enhance-section {
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+.enhance-title {
+    margin: 0 0 10px;
+    color: #7a364e;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.enhance-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.enhance-button {
+    min-width: 68px;
+    padding: 8px 9px;
+    border: 1px solid rgba(217, 87, 132, 0.16);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #7a364e;
+    font-family: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.enhance-button span {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.enhance-button small {
+    display: block;
+    margin-top: 3px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.enhance-button:hover {
+    transform: translateY(-2px);
+}
+
+.enhance-button.active {
+    background: #ffffff;
+    border-color: rgba(217, 87, 132, 0.48);
+    box-shadow:
+        0 7px 18px rgba(180, 76, 111, 0.14);
+}
+
+
+@media (max-width: 600px) {
+
+    .enhance-buttons {
+        gap: 5px;
+    }
+
+    .enhance-button {
+        min-width: 58px;
+        padding: 7px 6px;
+    }
+
+    .enhance-button span {
+        font-size: 14px;
+    }
+
+    .enhance-button small {
+        font-size: 7px;
+    }
+
+}
+/* =========================================
+   PHOTObooth HEART FILTER
+========================================= */
+
+#heartLeft,
+#heartRight {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    user-select: none;
+    line-height: 0;
+    transition:
+        left 0.08s ease,
+        top 0.08s ease,
+        width 0.08s ease,
+        height 0.08s ease;
+}
